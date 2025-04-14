@@ -57,6 +57,7 @@
     min-width: 160px;
     flex-direction: column;
     z-index: 1;
+    width: 100%;
 }
 
 .dropdown:hover .dropdown-content {
