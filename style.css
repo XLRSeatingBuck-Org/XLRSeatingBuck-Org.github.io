@@ -203,6 +203,18 @@ footer {
     transform: scale(1.05);
 }
 
+.table-header{
+    width: 100%; border-collapse: 
+    collapse; border: 
+    1px solid;
+    color: black;
+}
+.table-body{
+    border: 1px;
+    color: black; 
+    padding: 8px;
+}
+
 /***** HARDWARE ****/
 .hardware {
     padding: 40px 20px;
