@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Simulator - Vehicle Simulator Project</title>
+    <title>Unreal Engine Jet Simulator Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -58,6 +58,102 @@
 
 
   </section>
+
+  <!-- Purpose Section -->
+<section class="features-workflow">
+    <h2 class="header-body">Purpose</h2>
+  
+    <div class="feature-item">
+      <h3>Teaching Flight Basics</h3>
+      <p>The purpose of this program is to teach the user the basics of how they could fly an airplane. This needs to be accomplished in two parts:</p>
+        <ol>
+        <li>Realistic Physics Simulation</li>
+            <p>- The airplane must be made to feel as similar to a real plane as possible by gathering as much reference material as possible. This was done through a combination of studying airplane cockpit tour videos, airplane flight videos, jet plane discussion forums, and a few pages describing airplane physics</p>
+        <li>A detailed tutorial</li>
+            <p>- While having all of the features is nice, most users won’t be able to intuit how to fly an airplane. When testing with my teammates, everyone knew how to operate the throttle but the pedals frequently proved to be an issue and no one knew fully the correct procedure for takeoff or landing. This showed the need for a structured tutorial</p>
+            <p>- The tutorial covers takeoff, flight, and landing. Each section describes what you should be doing in text with animated gifs showing the relevant locations on the screen and animations of what you should be doing</p>
+            <p>- Each tutorial can use proximity to points to decide when they’re done. When you’re high enough in the air you’ve taken off, when you’re at cruising altitude you’re flying, and when you’re close to the final airport it’ll tell you how to land</p>
+            <p>- Unfortunately, a lot of learning a plane can be boiled down to intuition so users may not get this correct on their first try but that’s the point of a simulation</p>
+        </ol>
+    </div>
+  </section>
+
+  <!-- Glossary Section with Table -->
+  <section class="features-workflow">
+    <h2 class="header-body">Flight Terms Cheat Sheet</h2>
+  
+    <div class="feature-item" style="overflow-x: auto;">
+      <table class=".table-header">
+        <thead>
+          <tr style="background-color: #5533d1;">
+            <th class=".table-body">Name</th>
+            <th class=".table-body" style="text-align: left;">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Jet</td>
+            <td style="border: 1px solid #999; padding: 8px;">A jet is a type of airplane. Unlike propeller planes, jets use a gas combustion engine that produces a powerful stream of energy, enabling faster flight.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Yoke / Flight Stick</td>
+            <td style="border: 1px solid #999; padding: 8px;">This is the control stick used to steer the aircraft on the pitch and roll axes using wing flaps.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Throttle</td>
+            <td style="border: 1px solid #999; padding: 8px;">Controls aircraft speed. It may have one or two levers—two are often found in military aircraft to control each engine individually.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Rudder Pedals</td>
+            <td style="border: 1px solid #999; padding: 8px;">Used with both feet to steer the aircraft on the ground and in the air via yaw control. Also includes toe brakes for ground slowing.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Spoiler</td>
+            <td style="border: 1px solid #999; padding: 8px;">Wing flaps that deploy upward to increase drag and slow down the aircraft, usable both in-air and on the ground.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Landing Gear</td>
+            <td style="border: 1px solid #999; padding: 8px;">Wheels that retract into the aircraft mid-flight to reduce drag and extend during takeoff/landing.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #999; padding: 8px;">Pitch / Yaw / Roll</td>
+            <td style="border: 1px solid #999; padding: 8px;">3D rotation directions: Pitch tilts up/down, Yaw turns left/right, and Roll banks the plane side to side.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <!-- Mechanics Section -->
+  <section class="features-workflow">
+    <h2 class="header-body">Mechanics Used to Drive the Airplane</h2>
+  
+    <div class="feature-item">
+      <h3>Physics Forces</h3>
+      <img src = "images/PlaneDiagram.png" alt = "diagram of an airplane with arrows displaying different physics forces such as wind resistance, gravity, lift, and the movement of the plane itself.">
+    </div>
+  
+    <div class="feature-item">
+      <h3>Basic Input</h3>
+      <p>We used the Raw Input plugin for Windows to support multiple custom controllers. Inputs from pedals, throttles, and sticks were manually mapped to avoid overlap between devices.</p>
+    </div>
+  
+    <div class="feature-item">
+      <h3>Wind Resistance & Gravity</h3>
+      <p>To stabilize aircraft physics, drag and gravity balance input forces. Altitude, plane tilt, and gear positioning all affect drag efficiency, encouraging players to fly at optimal cruising altitudes.</p>
+    </div>
+  </section>
+  
+  <!-- GPS System Section -->
+  <section class="features-workflow">
+    <h2 class="header-body">GPS System</h2>
+  
+    <div class="feature-item">
+      <h3>Visual Navigation</h3>
+      <p>The GPS is integrated into the cockpit screen, showing a dot for the player’s position and another for the destination. A connecting line guides flight. Once close enough, both disappear and the player is notified of arrival.</p>
+    </div>
+  </section>
+  
     </main>
 
     <!-- Footer -->
