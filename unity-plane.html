@@ -28,55 +28,85 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Realistic Jet Handling in an Airplane Simulation</h1>
-                <p>Learn to take off, fly, and land in a virtual reconstruction of Corvallis</p>
-                <!--Eventually I'd like to add a photo here-->
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <section class="hero">
+          <div class="hero-content">
+              <h1>Wildfire Suppression Simulation with Realistic Jet Handling</h1>
+              <p>Fly a firefighting jet across a virtual forest and suppress spreading wildfires using Phos-Chek drops</p>
+              <!--Eventually I'd like to add a photo here-->
+          </div>
+      </section>
 
      <!-- Features and Workflow Section -->
-     <section class="features-workflow">
-      <h2 class="header-body">Key Features and Workflow</h2>
-      
-      <div class="feature-item">
-          <h3>Choose your experience</h3>
-          <p>As with the rest of the XR seating buck, the jet simulation is meant to be interactive. Use VR or a normal screen, fully adjust your physical environment, play with keyboard or mockups of real A-10C warthog hardware</p>
-      </div>
-      
-      <div class="feature-item">
-          <h3>Realistic Plane Physics</h3>
-          <p>The car simulation is powered by realistic car physics in Unreal Engine, enabling dynamic interactions with the environment. Using input from hardware like manual transmission, steering wheels, and pedals, the car mimics real-world driving behavior, enhancing the immersion of the simulation.</p>
-      </div>
+<!-- Features and Workflow Section -->
+<section class="features-workflow">
+  <h2 class="header-body">Key Features and Workflow</h2>
+  
+  <div class="feature-item">
+      <h3>Choose Your Experience</h3>
+      <p>This simulation is designed for versatility—use it in VR for full immersion or on a standard screen. Control the jet with a keyboard, gamepad, or HOTAS setup, and experience the mission from a customizable XR seating buck cockpit environment.</p>
+  </div>
+  
+  <div class="feature-item">
+      <h3>Dynamic Wildfire Logic</h3>
+      <p>Wildfires are created using clusters of smaller fires scattered throughout a forest. Each fire instance has its own collider and dynamically grows in scale over time to simulate the spreading of fire across the terrain, increasing the urgency of suppression tasks.</p>
+  </div>
 
-      <div class="feature-item">
-          <h3>Interactive interior</h3>
-          <p>The interior of the jet plane features several elements taken from real airplanes to help you more easily learn to fly. A working GPS; a HUD telling you your speed, pitch, and yaw with a horizon marker; and cameras to help you see the outside of your plane from different angles</p>
-      </div>
+  <div class="feature-item">
+      <h3>Phos-Chek Deployment Mechanism</h3>
+      <p>The firefighting jet is equipped with a Phos-Chek particle system mounted on its underside. When the user holds down a designated HOTAS button, the Phos-Chek collider is activated and deployed downward. Upon contact with active fire zones, the fires are extinguished in real time—creating a satisfying and responsive interaction loop.</p>
+  </div>
 
+  <div class="feature-item">
+      <h3>Interactive Cockpit and Feedback</h3>
+      <p>The simulation includes a functional cockpit with HUD elements for speed, pitch, and position tracking. Combined with onboard cameras and GPS, users gain complete situational awareness to navigate complex fire zones and execute precise aerial drops.</p>
+  </div>
+</section>
 
-  </section>
 
   <!-- Problem Statement Section -->
-<section class="features-workflow">
+  <section class="features-workflow">
     <h2 class="header-body">Problem Statement</h2>
   
     <div class="feature-item">
-      <h3>Teaching Flight Basics</h3>
-      <p>The purpose of this program is to teach the user the basics of how they could fly an airplane. This needs to be accomplished in two parts:</p>
-        <ol>
-        <li>Realistic Physics Simulation</li>
-            <p>- The airplane must be made to feel as similar to a real plane as possible by gathering as much reference material as possible. This was done through a combination of studying airplane cockpit tour videos, airplane flight videos, jet plane discussion forums, and a few pages describing airplane physics</p>
-        <li>A detailed tutorial</li>
-            <p>- While having all of the features is nice, most users won’t be able to intuit how to fly an airplane. When testing with my teammates, everyone knew how to operate the throttle but the pedals frequently proved to be an issue and no one knew fully the correct procedure for takeoff or landing. This showed the need for a structured tutorial</p>
-            <p>- The tutorial covers takeoff, flight, and landing. Each section describes what you should be doing in text with animated gifs showing the relevant locations on the screen and animations of what you should be doing</p>
-            <p>- Each tutorial can use proximity to points to decide when they’re done. When you’re high enough in the air you’ve taken off, when you’re at cruising altitude you’re flying, and when you’re close to the final airport it’ll tell you how to land</p>
-            <p>- Unfortunately, a lot of learning a plane can be boiled down to intuition so users may not get this correct on their first try but that’s the point of a simulation</p>
-        </ol>
+      <h3>Simulating Aerial Wildfire Suppression</h3>
+  
+      <p>The purpose of this project is to create a simulation that trains users in aerial wildfire suppression techniques by combining realistic flight controls with dynamic wildfire behavior and firefighting mechanics.</p>
+  
+      <ol>
+        <li>Problem Statement
+          <p>- As wildfires become more frequent and intense, there is a growing need for training tools that help users understand aerial firefighting techniques.</p>
+          <p>- Traditional flight simulators lack realistic fire behavior and suppression mechanics, limiting their usefulness in wildfire response training.</p>
+          <p>- This project addresses that gap by creating an immersive experience focused on wildfire detection, spread, and aerial response.</p>
+        </li>
+        <p></p>
+  
+        <li>Target Audience
+          <p>- Students, emergency response trainees, and aviation or disaster management enthusiasts benefit from this simulation.</p>
+          <p>- It is especially useful for those exploring aircraft operation mechanics in real-world emergency scenarios.</p>
+        </li>
+        <p></p>
+  
+        <li>Core Features and Benefits
+          
+            <p>- Dynamic wildfire system that grows in scale and spreads using clustered colliders.</p>
+            <p>- Phos-Chek firefighting deployment system that interacts with wildfires in real-time upon user input.</p>
+            <p>- Intuitive control scheme supporting HOTAS, keyboard, and gamepad inputs.</p>
+            <p>- HUD and cockpit interface providing flight and target-tracking information.</p>
+            <p>- VR and non-VR compatibility for accessibility and immersion.</p>
+          
+        </li>
+        <p></p>
+  
+        <li>Comparison with Existing Solutions
+          <p>- Many flight simulators provide realistic flying mechanics, but very few simulate environmental emergencies such as wildfires.</p>
+          <p>- This project integrates interactive wildfire logic, fire-retardant deployment mechanics, and suppression feedback, offering a more specialized and hands-on experience than simulators like Microsoft Flight Simulator or X-Plane.</p>
+        </li>
+      </ol>
+  
     </div>
   </section>
+  
 
 
   
@@ -109,22 +139,37 @@
 
   </section>
 
-  <!-- Logic Section -->
-  <section class="features-workflow">
-    <h2 class="header-body">Logic</h2>
-  
-    <div class="feature-item">
-      <h3>Visual Navigation</h3>
-      <p>The GPS is integrated into the cockpit screen, showing a dot for the player’s position and another for the destination. A connecting line guides flight. Once close enough, both disappear and the player is notified of arrival.</p>
-    </div>
-  </section>
-  
-    </main>
+<section class="features-workflow">
+  <h2 class="header-body">Plane Logic</h2>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Vehicle Simulator Project. All Rights Reserved.</p>
-    </footer>
+  <div class="feature-item">
+    <h3>Wildfire Interaction and Aerial Suppression</h3>
+    <p>
+      This section of the simulation focuses on simulating aerial firefighting with a plane equipped to drop Phos-Chek fire retardant on active wildfires in a forest environment.
+    </p>
+
+    <h4>🔥 Wildfire Behavior</h4>
+    <ul>
+      <li>The wildfire consists of numerous small fire objects, each with colliders attached.</li>
+      <li>To simulate natural fire spread, the fires gradually increase in scale over time.</li>
+    </ul>
+
+    <h4>✈️ Phos-Chek Deployment System</h4>
+    <ul>
+      <li>A particle system simulates the Phos-Chek fire retardant.</li>
+      <li>The particle system is mounted beneath the airplane and configured to move downward when released.</li>
+      <li>A collider is attached to the Phos-Chek particle system to allow interaction with fire objects.</li>
+      <li>By default, the Phos-Chek collider is disabled to avoid accidental triggering.</li>
+      <li>When the user presses and holds a specific button on the HOTAS simulator, the collider is enabled and the retardant is deployed.</li>
+    </ul>
+
+    <h4>💥 Interaction Logic</h4>
+    <ul>
+      <li>When the Phos-Chek collides with active fire objects in the forest, those fires begin to shrink and eventually disappear, simulating fire suppression.</li>
+      <li>This provides an intuitive, skill-based mechanic where users must fly accurately and time their release correctly to suppress the fire effectively.</li>
+    </ul>
+  </div>
+</section>
 
 </body>
 </html>
