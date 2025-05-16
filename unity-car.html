@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unreal Engine Jet Simulator Project</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unreal Engine Jet Simulator Project</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <button class="dropdown-button">Projects</button>
-            <div class="dropdown-content">
-                <a href="unreal-car.html">Unreal Car 🚘</a>
-                <a href="unreal-plane.html">Unreal Plane 🛬</a>
-                <a href="unity-car.html">Unity Car 🚒</a>
-                <a href="unity-plane.html">Unity Plane 🌲</a>
-            </div>
-        </div>
-        <a href="hardware.html">Hardware</a>
-        <a href="software.html">Software</a>
-        <a href="team.html">Meet the Team</a>
-        <a href="attributions.html">Attributions</a>
-    </nav>
-
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Realistic Jet Handling in an Airplane Simulation</h1>
-                <p>Learn to take off, fly, and land in a virtual reconstruction of Corvallis</p>
-                <!--Eventually I'd like to add a photo here-->
-            </div>
-        </section>
-
-     <!-- Features and Workflow Section -->
-     <section class="features-workflow">
-      <h2 class="header-body">Key Features and Workflow</h2>
-      
-      <div class="feature-item">
-          <h3>Choose your experience</h3>
-          <p>As with the rest of the XR seating buck, the jet simulation is meant to be interactive. Use VR or a normal screen, fully adjust your physical environment, play with keyboard or mockups of real A-10C warthog hardware</p>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropdown-button">Projects</button>
+      <div class="dropdown-content">
+        <a href="unreal-car.html">Unreal Car 🚘</a>
+        <a href="unreal-plane.html">Unreal Plane 🛬</a>
+        <a href="unity-car.html">Unity Car 🚒</a>
+        <a href="unity-plane.html">Unity Plane 🌲</a>
       </div>
-      
-      <div class="feature-item">
-          <h3>Realistic Plane Physics</h3>
-          <p>The car simulation is powered by realistic car physics in Unreal Engine, enabling dynamic interactions with the environment. Using input from hardware like manual transmission, steering wheels, and pedals, the car mimics real-world driving behavior, enhancing the immersion of the simulation.</p>
-      </div>
-
-      <div class="feature-item">
-          <h3>Interactive interior</h3>
-          <p>The interior of the jet plane features several elements taken from real airplanes to help you more easily learn to fly. A working GPS; a HUD telling you your speed, pitch, and yaw with a horizon marker; and cameras to help you see the outside of your plane from different angles</p>
-      </div>
-
-
-  </section>
-
-  <!-- Problem Statement Section -->
-<section class="features-workflow">
-    <h2 class="header-body">Problem Statement</h2>
-  
-    <div class="feature-item">
-      <h3>Teaching Flight Basics</h3>
-      <p>The purpose of this program is to teach the user the basics of how they could fly an airplane. This needs to be accomplished in two parts:</p>
-        <ol>
-        <li>Realistic Physics Simulation</li>
-            <p>- The airplane must be made to feel as similar to a real plane as possible by gathering as much reference material as possible. This was done through a combination of studying airplane cockpit tour videos, airplane flight videos, jet plane discussion forums, and a few pages describing airplane physics</p>
-        <li>A detailed tutorial</li>
-            <p>- While having all of the features is nice, most users won’t be able to intuit how to fly an airplane. When testing with my teammates, everyone knew how to operate the throttle but the pedals frequently proved to be an issue and no one knew fully the correct procedure for takeoff or landing. This showed the need for a structured tutorial</p>
-            <p>- The tutorial covers takeoff, flight, and landing. Each section describes what you should be doing in text with animated gifs showing the relevant locations on the screen and animations of what you should be doing</p>
-            <p>- Each tutorial can use proximity to points to decide when they’re done. When you’re high enough in the air you’ve taken off, when you’re at cruising altitude you’re flying, and when you’re close to the final airport it’ll tell you how to land</p>
-            <p>- Unfortunately, a lot of learning a plane can be boiled down to intuition so users may not get this correct on their first try but that’s the point of a simulation</p>
-        </ol>
     </div>
-  </section>
+    <a href="hardware.html">Hardware</a>
+    <a href="software.html">Software</a>
+    <a href="team.html">Meet the Team</a>
+    <a href="attributions.html">Attributions</a>
+  </nav>
+
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Realistic Jet Handling in an Airplane Simulation</h1>
+        <p>Learn to take off, fly, and land in a virtual reconstruction of Corvallis</p>
+        <!--Eventually I'd like to add a photo here-->
+      </div>
+    </section>
+
+    <!-- Features and Workflow Section -->
+    <section class="features-workflow">
+      <h2 class="header-body">Key Features and Workflow</h2>
+
+      <div class="feature-item">
+        <h3>Choose your experience</h3>
+        <p>As with the rest of the XR seating buck, the jet simulation is meant to be interactive. Use VR or a normal
+          screen, fully adjust your physical environment, play with keyboard or mockups of real A-10C warthog hardware
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Realistic Plane Physics</h3>
+        <p>The car simulation is powered by realistic car physics in Unreal Engine, enabling dynamic interactions with
+          the environment. Using input from hardware like manual transmission, steering wheels, and pedals, the car
+          mimics real-world driving behavior, enhancing the immersion of the simulation.</p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Interactive interior</h3>
+        <p>The interior of the jet plane features several elements taken from real airplanes to help you more easily
+          learn to fly. A working GPS; a HUD telling you your speed, pitch, and yaw with a horizon marker; and cameras
+          to help you see the outside of your plane from different angles</p>
+      </div>
+
+
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="features-workflow">
+      <h2 class="header-body">Problem Statement</h2>
+
+      <div class="feature-item">
+        <h3>Teaching Flight Basics</h3>
+        <p>The purpose of this program is to teach the user the basics of how they could fly an airplane. This needs to
+          be accomplished in two parts:</p>
+        <ol>
+          <li>Realistic Physics Simulation</li>
+          <p>- The airplane must be made to feel as similar to a real plane as possible by gathering as much reference
+            material as possible. This was done through a combination of studying airplane cockpit tour videos, airplane
+            flight videos, jet plane discussion forums, and a few pages describing airplane physics</p>
+          <li>A detailed tutorial</li>
+          <p>- While having all of the features is nice, most users won’t be able to intuit how to fly an airplane. When
+            testing with my teammates, everyone knew how to operate the throttle but the pedals frequently proved to be
+            an issue and no one knew fully the correct procedure for takeoff or landing. This showed the need for a
+            structured tutorial</p>
+          <p>- The tutorial covers takeoff, flight, and landing. Each section describes what you should be doing in text
+            with animated gifs showing the relevant locations on the screen and animations of what you should be doing
+          </p>
+          <p>- Each tutorial can use proximity to points to decide when they’re done. When you’re high enough in the air
+            you’ve taken off, when you’re at cruising altitude you’re flying, and when you’re close to the final airport
+            it’ll tell you how to land</p>
+          <p>- Unfortunately, a lot of learning a plane can be boiled down to intuition so users may not get this
+            correct on their first try but that’s the point of a simulation</p>
+        </ol>
+      </div>
+    </section>
 
 
   
@@ -103,22 +122,37 @@
     </div>
   </section>
 
-  <!-- Logic Section -->
-  <section class="features-workflow">
-    <h2 class="header-body">Logic</h2>
-  
-    <div class="feature-item">
-      <h3>Visual Navigation</h3>
-      <p>The GPS is integrated into the cockpit screen, showing a dot for the player’s position and another for the destination. A connecting line guides flight. Once close enough, both disappear and the player is notified of arrival.</p>
-    </div>
-  </section>
-  
-    </main>
+    <!-- Logic Section -->
+    <section class="features-workflow">
+      <h2 class="header-body">Logic</h2>
+      <ul class="logic-list">
+        <li>🔥 <strong>Igniting the Scene:</strong> Imported Unity’s Particle Pack and applied a fire effect to a house
+          model to simulate a realistic blaze.</li>
+        <li>📈 <strong>Growing the Flames:</strong> Wrote a script that increases the fire’s scale over time, creating
+          the illusion of a spreading and intensifying fire.</li>
+        <li>🧱 <strong>Fire Gets Physical:</strong> Added colliders to the fire so it can interact with other
+          objects—especially water.</li>
+        <li>💧 <strong>Equipping the Firetruck:</strong> Designed a water spray particle system and attached it to the
+          front of the firetruck’s hose.</li>
+        <li>🎮 <strong>User Control:</strong> Mapped hose rotation to the Logitech G920’s steering wheel, allowing
+          players to aim the water manually.</li>
+        <li>🕹️ <strong>Triggering the Response:</strong> Set up a button on the G920 to activate the water spray,
+          simulating firefighting on command.</li>
+        <li>🔄 <strong>Collision Detection:</strong> Gave the water particles colliders and scripted interactions to
+          detect contact with fire particles.</li>
+        <li>🌧️ <strong>Fire Meets Water:</strong> When water hits the fire, the fire’s size is reduced
+          dynamically—visually representing the extinguishing process.</li>
+      </ul>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Vehicle Simulator Project. All Rights Reserved.</p>
-    </footer>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vehicle Simulator Project. All Rights Reserved.</p>
+  </footer>
 
 </body>
+
 </html>
