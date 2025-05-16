@@ -85,19 +85,10 @@
     <h2 class="header-body">Input</h2>
   
     <div class="feature-item">
-      <h3>Physics Forces</h3>
-      <img src = "Images/PlaneDiagram.png" alt = "diagram of an airplane with arrows displaying different physics forces such as wind resistance, gravity, lift, and the movement of the plane itself.">
+      <img src="Images/InputDiagram.png" style="max-width: 70%;" />
+      <p>Input in Unity is abstracted into generic actions that are read out as a data type (bool for button, float for slider, etc). This way, the code doesn't have to worry about specific devices or combinations of devices. Mapping controllers to actions is as simple as pressing a button on the controller and listening for said button.</p>
     </div>
   
-    <div class="feature-item">
-      <h3>Basic Input</h3>
-      <p>We used the Raw Input plugin for Windows to support multiple custom controllers. Inputs from pedals, throttles, and sticks were manually mapped to avoid overlap between devices.</p>
-    </div>
-  
-    <div class="feature-item">
-      <h3>Wind Resistance & Gravity</h3>
-      <p>To stabilize aircraft physics, drag and gravity balance input forces. Altitude, plane tilt, and gear positioning all affect drag efficiency, encouraging players to fly at optimal cruising altitudes.</p>
-    </div>
   </section>
   
   <!-- Environment Section -->
