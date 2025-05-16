@@ -85,28 +85,21 @@
     <h2 class="header-body">Input</h2>
   
     <div class="feature-item">
-      <h3>Physics Forces</h3>
-      <img src = "Images/PlaneDiagram.png" alt = "diagram of an airplane with arrows displaying different physics forces such as wind resistance, gravity, lift, and the movement of the plane itself.">
+      <img src="Images/InputDiagram.png" style="max-width: 50%;" />
+      <p>Input in Unity is abstracted into generic actions that are read out as a data type (bool for button, float for slider, etc). This way, the code doesn't have to worry about specific devices or combinations of devices. Mapping controllers to actions is as simple as pressing a button on the controller and listening for said button.</p>
     </div>
   
-    <div class="feature-item">
-      <h3>Basic Input</h3>
-      <p>We used the Raw Input plugin for Windows to support multiple custom controllers. Inputs from pedals, throttles, and sticks were manually mapped to avoid overlap between devices.</p>
-    </div>
-  
-    <div class="feature-item">
-      <h3>Wind Resistance & Gravity</h3>
-      <p>To stabilize aircraft physics, drag and gravity balance input forces. Altitude, plane tilt, and gear positioning all affect drag efficiency, encouraging players to fly at optimal cruising altitudes.</p>
-    </div>
   </section>
   
   <!-- Environment Section -->
   <section class="features-workflow">
     <h2 class="header-body">Environment</h2>
   
+      <img src="Images/UnityCarEnvironment.png" style="max-width: 50%;" />
+
     <div class="feature-item">
-      <h3>Visual Navigation</h3>
-      <p>The GPS is integrated into the cockpit screen, showing a dot for the player’s position and another for the destination. A connecting line guides flight. Once close enough, both disappear and the player is notified of arrival.</p>
+      <h3>Location Building Data</h3>
+      <p>We used ArcGIS CityEngine to extract a region of Corvallis. This region includes the location, size, and shape of buildings, trees, and roads. This data was exported as an fbx object and textures, and then imported into Unity. Cesium's Bing map data provides the visuals for the rest of the world, to ground the city model in it's location.</p>
     </div>
   </section>
 

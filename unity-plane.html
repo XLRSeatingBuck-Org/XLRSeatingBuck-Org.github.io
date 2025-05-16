@@ -85,7 +85,7 @@
     <h2 class="header-body">Input</h2>
   
     <div class="feature-item">
-      <img src="Images/InputDiagram.png" style="max-width: 70%;" />
+      <img src="Images/InputDiagram.png" style="max-width: 50%;" />
       <p>Input in Unity is abstracted into generic actions that are read out as a data type (bool for button, float for slider, etc). This way, the code doesn't have to worry about specific devices or combinations of devices. Mapping controllers to actions is as simple as pressing a button on the controller and listening for said button.</p>
     </div>
   
@@ -95,10 +95,18 @@
   <section class="features-workflow">
     <h2 class="header-body">Environment</h2>
   
+      <img src="Images/UnityPlaneEnvironment.png" style="max-width: 50%;" />
+
     <div class="feature-item">
-      <h3>Visual Navigation</h3>
-      <p>The GPS is integrated into the cockpit screen, showing a dot for the player’s position and another for the destination. A connecting line guides flight. Once close enough, both disappear and the player is notified of arrival.</p>
+      <h3>GIS map data</h3>
+      <p>We use Cesium's Bing terrain and Google 3d tiles to render the world that the user flies over.</p>
     </div>
+
+    <div class="feature-item">
+      <h3>Forest data</h3>
+      <p>Cesium for Unity does not support vector or point data, so for the forest where the fire is, we used an OSM extract of the area (via https://www.openstreetmap.org/export).</p>
+    </div>
+
   </section>
 
   <!-- Logic Section -->
