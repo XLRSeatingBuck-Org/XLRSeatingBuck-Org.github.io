@@ -99,12 +99,12 @@
 
     <div class="feature-item">
       <h3>GIS map data</h3>
-      <p>We use Cesium's Bing terrain and Google 3d tiles to render the world that the user flies over. The 3d tiles</p>
+      <p>We use Cesium's Bing terrain and Google 3d tiles to render the world that the user flies over. The 3d tiles are restricted to just the airport area to make it stand out more and to improve performance.</p>
     </div>
 
     <div class="feature-item">
       <h3>Forest data</h3>
-      <p>Cesium for Unity does not support vector or point data, so for the forest where the fire is, we used an OSM extract of the area .</p>
+      <p>Cesium for Unity does not support vector or point data, so for the forest where the fire is, we used an OSM extract of the area and wrote a custom xml parser to extract the relevant data and place trees in the correct areas. This was done instead of using Google's 3d data because each tree needs to ability to individually die from the fire, which is not possible with only mesh data from Google.</p>
     </div>
 
   </section>
