@@ -58,7 +58,7 @@ footer {
 /* Navbar (Top bar on screen) */
 .navbar {
     gap: 1px;
-    width: 100%;
+    /* width: 100%; makes header too long for some godforsaken reason */
     background-color: var(--middlegroundPurple);
     padding: 12px 20px;
     display: flex;
