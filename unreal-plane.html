@@ -135,25 +135,99 @@
   
     <div class="feature-item">
       <h3>Basic Input</h3>
-      <p>We used the Raw Input plugin for Windows to support multiple custom controllers. Inputs from pedals, throttles, and sticks were manually mapped to avoid overlap between devices.</p>
+      <p>
+        Input was mapped internally using the Raw Input plugin for Windows which converts inputs from any controller detected by the operating system into raw data that can then be mapped to actions as generic buttons and axes. 
+      </p>
+      <p>
+        The system works very well for steering wheels but unfortunately 
+        it’s not made to use multiple controllers for a single actor such as with the HOTAS used for 
+        our airplane simulation which was split between a Yoke, Throttle, and Pedal controller that each ran separately. 
+        In order to get input to work, I wrote down all of the button and 
+        axis maps for each controller and then chose an order for those controllers 
+        that I liked. Afterwards, I shifted each controller so the buttons did not 
+        overlap with previous controllers to get all buttons to function as inputs.
+      </p>
     </div>
   
     <div class="feature-item">
       <h3>Wind Resistance & Gravity</h3>
-      <p>To stabilize aircraft physics, drag and gravity balance input forces. Altitude, plane tilt, and gear positioning all affect drag efficiency, encouraging players to fly at optimal cruising altitudes.</p>
+      <p>When applying basic forces with input, these forces can compound on 
+        themselves infinitely and cause erratic behavior while driving 
+        (mainly a very rapidly spinning aircraft). How this is kept in check 
+        in real life is through wind resistance and gravity.</p>
+      <p>
+        Gravity counteracts lift (lift being the force that pushes the plane 
+        upwards when it’s moving sufficiently fast).
+      </p>
+      <p>
+        Wind resistance counteracts turning and acceleration. 
+        Small factors such as tilting the plane in a direction it’s not 
+        currently moving, keeping your landing gear out, and being at 
+        the wrong altitude all affect the plane’s ability to move as 
+        efficiently through the wind. This requires the user to engage 
+        more while they’re flying and make sure that they’re sitting at 
+        cruising altitude to keep their plane running at peak efficiency.
+      </p>
     </div>
   </section>
   
   <!-- GPS System Section -->
   <section class="features-workflow">
     <h2 class="header-body">GPS System</h2>
-  
     <div class="feature-item">
-      <h3>Visual Navigation</h3>
-      <p>The GPS is integrated into the cockpit screen, showing a dot for the player’s position and another for the destination. A connecting line guides flight. Once close enough, both disappear and the player is notified of arrival.</p>
+      <p>In order to make it easier for the user to navigate from one airport to 
+        another, it seemed necessary to integrate a gps system into the jet plane. 
+        The Goal of the GPS was to display on one of the two integrated monitors in 
+        the cockpit. Once dot would represent the user’s aircraft and a second dot 
+        would represent the location they’re meant to fly to. Between these points 
+        is a straight line the player can follow (since they’re to fly to their 
+        destination). The GPS will then terminate both points and notify the user 
+        when they’ve arrived at their destination.</p>
+        <p>
+          This system is ideal both because it’s a real feature used by airplane 
+          pilots including on jet planes, and because most people already have 
+          prior experience with a GPS which helps make more parts of our system 
+          intuitive for the user to work with.
+        </p>
     </div>
   </section>
   
+
+  <!-- Cesium -->
+  <section class="features-workflow">
+    <h2 class="header-body">Map Streaming and Using Multiple Maps at Once</h2>
+    <div class="feature-item">
+      <p>
+        Realistic maps are large and expensive to create both in terms of money and 
+        resources. To create a simulator that works in virtual reality, we needed a 
+        system to overcome these obstacles and we found that system with Cesium.
+      </p>
+      <p>
+        Cesium is a tool that streams data from both Bing Maps and Google Maps. 
+        It’s possible to obtain a GPS map, flat aerial photos of the ground, and low 
+        fidelity 3d models. The Unreal Jet project ended up using the 3d models to 
+        represent the ground since they give depth and from far away they still have 
+        enough detail to appear realistic to the user
+      </p>
+    </div>
+  </section>
+
+  <!-- Cesium -->
+  <section class="features-workflow">
+    <h2 class="header-body">Tutorial System</h2>
+    <div class="feature-item">
+      <p>
+        Work in progress
+      </p>
+      <p>
+        The plan is to make a widget that will pause the game at key points to guide the user to properly fly a plane. Takeoff, flight, and landing will all have detailed instructions with optional definitions. 
+      </p>
+      <p>
+        This section will be expanded significantly and moved above the GPS system card when it's been implemented enough to make some diagrams
+      </p>
+    </div>
+  </section>
+
     </main>
 
     <!-- Footer -->
