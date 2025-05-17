@@ -245,6 +245,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* stolen from features-workflow */
+    padding: 20px;
+    background-color: var(--middlegroundPurple);
+    border-radius: 12px;
+    margin: 20px 0;
 }
 
 .hardware-item img {
