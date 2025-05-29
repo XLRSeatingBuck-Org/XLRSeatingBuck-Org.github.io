@@ -32,28 +32,110 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Immersive Car Simulation in Unreal Engine</h1>
-                <p>Driving through a detailed map of Corvallis using high-fidelity hardware in Unreal Engine.</p>
+                <p>Experience driving through the diverse landscapes of farmlands, woods and suburban areas in Unreal Engine.</p>
+
             </div>
         </section>
 
      <!-- Features and Workflow Section -->
      <section class="features-workflow">
-      <h2 class="header-body">Key Features and Workflow</h2>
+      <h2 class="header-body">Key Features</h2>
       
-      <div class="feature-item">
-          <h3>Map Creation & Integration</h3>
-          <p>The map of Corvallis is sourced from OpenStreetMap and then imported into CityEngine for rule-based modeling. This process involves designing the street network, buildings, and other urban structures. Afterward, the map is imported into Unreal Engine for final integration, where it’s enhanced with additional environmental details and physics for the driving experience.</p>
+
+      <p>
+        This project aims to implement a framework for designing a suburban area by integrating Geographic Information System (GIS) datasets using procedural modeling approach .
+        The chosen model area is in Corvallis, Oregon (see map), selected for its diverse landscapes —including natural areas (grasslands, woodlands, scrub), land uses (farmland, farmyards), and suburban housing. The ultimate goal is to support our immersive driving simulator that reconstructs realistic environments procedurally.
+      </p>
+    <div class="feature-item">
+           <h3>Immersive Driving Experience</h3>
+      <p>Navigate, explore, or drive through a procedurally generated environment—customized to your preferences. Whether you're using a VR headset or a traditional monitor, and whether you want passive exploration or active simulation, the system is built to adapt to your setup and interests. </p>
       </div>
       
       <div class="feature-item">
-          <h3>Realistic Car Physics</h3>
-          <p>The car simulation is powered by realistic car physics in Unreal Engine, enabling dynamic interactions with the environment. Using input from hardware like manual transmission, steering wheels, and pedals, the car mimics real-world driving behavior, enhancing the immersion of the simulation.</p>
+           <h3>Real-World Reconstruction</h3>
+      <p>The simulation environment is reconstructed from real-world geographic data sourced from OpenStreetMap. Using GIS attributes such as road classifications, land use types, and building footprints, we generate accurate 3D models that reflect the layout and structure of Corvallis. This data-driven approach ensures that the environment is both believable and scalable, enabling rapid generation of suburban areas without compromising on realism or detail.</p>
+      </div>
+
+    <div class="feature-item">
+           <h3>Procedural Content Generation</h3>
+     <p>From suburban houses, powerlines to a vast areas of farmlands, woods, the environment is built using rule-based procedural modeling, allowing streets, houses, fences, and infrastructure to be automatically generated from attributes and variables. This approach minimizes manual design work, speeds up iteration, and ensures consistent, scalable worldbuilding across large areas</p>
       </div>
 
       <div class="feature-item">
-          <h3>Immersive VR Experience</h3>
-          <p>The simulator integrates with VR headsets like Oculus Quest Pro and Varjo XR-4 to provide a fully immersive experience. Combined with haptic feedback devices like TactSuit X40, users can feel the simulation in a more tangible way, enhancing the realism of the driving experience.</p>
+         
       </div>
+          <section>
+         <section class="features-workflow">
+      <h2 class="header-body">Technical Workflow</h2>
+      <p>
+        The project integrates two primary data layers:
+ (1) Geospatial Data from OpenStreetMap (OSM), which includes 2D boundary and attribute data; (2) 3D Procedural Content, generated using a combination of CityEngine and Unreal Engine’s PCG (Procedural Content Generation) plugin.
+  <div class="feature-item">
+
+
+      <h3>1. Data Extraction & Modeling in CityEngine</h3>
+      <p>
+        CityEngine serves as the main tool for procedural generation of city elements such as streets, buildings, and decorations. It uses a robust library of CGA rule packages to automate 3D asset generation.
+      </p>
+
+      <h4>a) Extract 2D Data Layers from OpenStreetMap</h4>
+      <ul>
+        <li><strong>Shapes</strong>: Represent buildings, land uses, and parking zones.</li>
+        <li><strong>Graphs</strong>: Represent roads (highways, cycleways, footways) and linear infrastructure (fences, powerlines).</li>
+        <li>These elements include object attributes that drive procedural rules.</li>
+      </ul>
+          <img src="Images\UnrealCar\cityenginegraph.png" alt="Model Area: Corvallis, Oregon (Map Reference)">
+
+      <h4>b) Apply Rule Packages to Generate 3D Content</h4>
+       <div class="item">
+    <div class="text">
+      <h3>Street Creation:</h3>
+      <p>Uses the Complete Street Rule Package to generate streets and sidewalks based on number of lanes, street direction, cycleway, and parking attributes.</p>
+    </div>
+    <img src="Images/UnrealCar/cityeningstreet.png" alt="CityEngine Street Example">
+  </div>
+
+  <div class="item">
+    <div class="text">
+      <h3>Suburban House Block:</h3>
+      <p>
+        Identify enclosed street networks that define blocks.<br>
+        Convert blocks into shapes and subdivide into front-facing lots.<br>
+        Apply the Suburban House Block rule to procedurally generate homes with consistent spacing and orientation.
+      </p>
+    </div>
+    <img src="Images/UnrealCar/suburbanrpk.png" alt="Suburban Block Layout">
+  </div>
+
+ 
+    <div class="text">
+      <h3>Additional Elements:</h3>
+      <p>Solar panels, fences, and other suburban features are added using additional rule packages.</p>
+    </div>
+    <div class="item">
+    <img src="Images/UnrealCar/solarpanel.png" alt="Suburban Add-ons">
+    <img src="Images/UnrealCar/powerline.png" alt="Suburban Add-ons">
+</div>
+        </div>
+          <div class="feature-item">
+
+
+      <h3>2. From CityEngine to Unreal Engine</h3>
+      <p>
+       CityEngine models can be exported directly into Unreal Engine using the Datasmith plugin. This integraion retains all object attributes associates with each shapes/meshes. These object attributes are converted to tags serving as key inputs for PCG graph 
+         </p>
+
+      <h4>Procedural Content Generation plugin</h4>
+      The PCG system in Unreal Engine provides a cabapilities to create your own procedural content inside the Unreal Engine. PCG logic is defined in PCG Graph. We create separate PCG Graphs for each landscapes : wood, farmland, grass, meadow, road. 
+      General key: all PCG graphs implement the World Ray Hit Query to scatter points all over the meshes with the specific tag (wood/farmland/grass/...) and project all the points onto the landscape data. At each points, we assign random offsets, scales, and rotations to give a more random, realistic looking scene, then we spawn different static meshes at those points.
+     
+ 
+
+  <div class="item">
+
+    <img src="Images\UnrealCar\wood.png" alt="Suburban Block Layout">
+  </div>
+    </section>
 
 
   </section>

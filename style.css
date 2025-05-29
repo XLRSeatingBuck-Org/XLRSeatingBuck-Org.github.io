@@ -240,7 +240,7 @@ footer {
     margin-bottom: 15px;
 }
 
-.hardware-item {
+.hardware-item, .item {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -252,7 +252,12 @@ footer {
     border-radius: 12px;
     margin: 20px 0;
 }
-
+.item img{
+    width: 100%;
+    max-width: 500px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
 .hardware-item img {
     width: 100%;
     max-width: 200px;
