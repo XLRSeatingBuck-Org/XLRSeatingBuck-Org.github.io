@@ -33,7 +33,7 @@
             <div class="hero-content">
                 <h1>Realistic Jet Handling in an Airplane Simulation</h1>
                 <p>Learn to take off, fly, and land in a virtual reconstruction of Corvallis</p>
-                <!--Eventually I'd like to add a photo here-->
+                <img src="Images/UnrealPlane/plane_exterior.png" alt="Jet plane flying over Albany Oregon" />
             </div>
         </section>
 
@@ -43,12 +43,12 @@
       
       <div class="feature-item">
           <h3>Choose your experience</h3>
-          <p>As with the rest of the XR seating buck, the jet simulation is meant to be interactive. Use VR or a normal screen, fully adjust your physical environment, play with keyboard or mockups of real A-10C warthog hardware</p>
+          <p>As with the rest of the XR seating buck, the jet simulation is meant to be interactive. Use an XR headset to experience the plane in virtual reality or a normal computer screen.</p>
       </div>
       
       <div class="feature-item">
           <h3>Realistic Plane Physics</h3>
-          <p>The car simulation is powered by realistic car physics in Unreal Engine, enabling dynamic interactions with the environment. Using input from hardware like manual transmission, steering wheels, and pedals, the car mimics real-world driving behavior, enhancing the immersion of the simulation.</p>
+          <p>The plane's movements are powered by a combination of Unreal Engine's built-in physics and hours of research on realistic jet plane handling. Experience lift, drag, and all other forces that would be experienced when flying a real plane while you learn controls and handling.</p>
       </div>
 
       <div class="feature-item">
@@ -79,6 +79,7 @@
   </section>
 
   <!-- Glossary Section with Table -->
+  <!-- Whenever I try to port this to use the style sheet it breaks. Sorry if this table looks like this forever -->
   <section class="features-workflow">
     <h2 class="header-body">Flight Terms Cheat Sheet</h2>
   
@@ -209,6 +210,7 @@
         represent the ground since they give depth and from far away they still have 
         enough detail to appear realistic to the user
       </p>
+      <img src="Images/UnrealPlane/cesium_landscape2.png" alt="Landscape shot of Albany Oregon from Cesium" />
     </div>
   </section>
 
@@ -217,13 +219,12 @@
     <h2 class="header-body">Tutorial System</h2>
     <div class="feature-item">
       <p>
-        Work in progress
+        The goal of the tutorial system is to provide a lightweight but still comprehensive set of instructions to teach the user how to fly the plane during different points in their trip from Albany to Corvallis. 
+        They'll be taught how to drive on the tarmac, fly, and land their airplane.
       </p>
       <p>
-        The plan is to make a widget that will pause the game at key points to guide the user to properly fly a plane. Takeoff, flight, and landing will all have detailed instructions with optional definitions. 
-      </p>
-      <p>
-        This section will be expanded significantly and moved above the GPS system card when it's been implemented enough to make some diagrams
+        The tutorial will be a widget displayed in 3d space. It's attached to the interior of the plane with buttons that are interactable with the buttons on the jet-plane's yoke. Each tutorial activates just before the user needs to learn the relevant information:
+        Driving on startup, flying just as the user begins to take off (roughly 200 meters in the air), and landing right as the user arrives at their destination (the Corvallis Airport). Like this web page, the tutorials all have a cheat sheet in the form of a button that opens a new window with definitions built onto it.
       </p>
     </div>
   </section>
