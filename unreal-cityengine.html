@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Simulator - Vehicle Simulator Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropdown-button">Projects</button>
+            <div class="dropdown-content">
+                  <a href="unreal-cityengine.html">Procedural Environment Simulation</a>
+                <a href="unreal-plane.html">Unreal Plane 🛬</a>
+                <a href="unity-car.html">Unity Car 🚒</a>
+                <a href="unity-plane.html">Unity Plane 🌲</a>
+            </div>
+        </div>
+        <a href="hardware.html">Hardware</a>
+        <a href="software.html">Software</a>
+        <a href="team.html">Meet the Team</a>
+        <a href="attributions.html">Attributions</a>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Procedural Modelling with Unreal Engine and City Engine</h1>
+                <p>Immersive experience in the diverse landscapes of farmlands, woods and suburban areas in Unreal Engine.</p>
+                <a href="https://github.com/XLRSeatingBuck-Org/UE-CityEngine" class="btn" download>Download Here</a>
+            </div>
+        </section>
+
+     <!-- Features and Workflow Section -->
+     <section class="features-workflow">
+      <h2 class="header-body">Key Features</h2>
+      
+      <p>
+        This project aims to integrate Geographical Information System (GIS) to build a 3D virtual environment in Unreal Engine.
+        The chosen model area is in Corvallis, Oregon (see map), selected for its diverse landscapes —including natural areas (grasslands, woodlands, scrub), land uses (farmland, farmyards), and suburban housing. The ultimate goal is to showcase the integration workflow as a case study of the integration of GIS and Graphics to motivate further research and use cases in building the digital twin. 
+      </p>
+       <img src="Images\UnrealCar\osm.png" alt="Model Area: Corvallis, Oregon (Map Reference)">
+      <div class="feature-item">
+           <h3>Real-World Reconstruction</h3>
+      <p>The simulation environment is reconstructed from real-world geographic data sourced from OpenStreetMap. From OpenStreetMap, we are able to retrieve a colleciton of shape boundaries to identify geographic areas associated with its feature attributes such as land uses, height, shape type to populate the virtual environment with 3D assets and layout that reflect its real-world layout. This data-driven approach ensures that the environment is both believable and scalable, enabling rapid generation of suburban areas without compromising on realism or detail.</p>
+      </div>
+           <h3>Procedural Content Generation</h3>
+     <p>From suburban houses, powerlines to a vast areas of farmlands, woods, the environment is built using rule-based procedural modeling, allowing streets, houses, fences, and infrastructure to be automatically generated dynamically. This approach minimizes manual design work, speeds up iteration, and ensures consistent, scalable worldbuilding across large areas</p>
+      </div>
+
+
+    </section>
+         <section class="features-workflow">
+      <h2 class="header-body">Technical Workflow</h2>
+      <p>
+        The project integrates two primary data layers:
+ (1) Geospatial Data from OpenStreetMap (OSM), which includes 2D boundary and attribute data; (2) 3D Procedural Content, generated using a combination of CityEngine and Unreal Engine’s PCG (Procedural Content Generation) plugin.
+  <div class="feature-item">
+
+
+      <h3>1. Procedural Modelling in CityEngine</h3>
+      <p>
+        CityEngine is a ArcGIS application specializing in the generation of ubban environments It provides both manual drawing tool and procedural tool for city modelling with diverse compatibility with other applications such as 3D modelling application: Blender, or Web visualization (arcgis), or game engines (Unreal Engine, Unity).  It uses a robust library of CGA rule packages to automate 3D asset generation.
+      </p>
+
+      <h4>a) Importing 2D GIS Data</h4>
+    <p>GIS data from OSM is imported as two types:</p>
+    <ul>
+      <li>Shapes representing buildings, land uses, parking zones, etc.</li>
+      <li>Graphs representing roads and linear infrastructure (e.g., fences, powerlines).</li>
+    </ul>
+        <h4>b) Generating 3D Content with CGA</h4>
+      <p> CityEngine has its own unique programming language called CGA (Computer Generated Architecture). CGA rules use geometry operation to transform the shape, manipulate the shape, or apply textures to provide a rich, detailed 3D models. CGA rules are defined in rule packages (.rpk) alongside with 3D object files, and texture files referenced </p>
+        <h4>Writing a CGA rule file: Suburban House Modelling</h4>
+  <img src="Images/UnrealCar/suburbanrpk.png" alt="Suburban Block Layout">
+<p>
+A suburban house model features an L-shaped structure, with one longer wing housing the garage, which faces the street. The garage connects to a driveway that extends directly to the street. The driveway is extruded and slightly inclined upward to match elevation changes or grading.
+
+Each house is fronted by a sidewalk running parallel to the street, typically accompanied by a lawn or green buffer that separates the house from the roadway. From the driveway, a walkway leads to the front door, cutting through the front yard and providing a clear pedestrian path from the street to the home’s entrance.</p>
+    
+<h4>Integrate street attributes to House Generation</h4>
+<div class="item">
+<p>In CityEngine, the graph network not only generate street shapes but also subdivide lots enclosed by the street network. Here, this method is used to model residental areas where each lot is assigned the CGA rule files. Comparing with the traditional method of house generation from OSM building footprint (Figure 1), the lot subdivision method subdivide each lots and tags them with street facing attributes to identify the house orientation, thus enable the generation of driveway and sidewalk connected from the house to the street</p>
+  <img src="Images\UnrealCar\cityenginegraph.png" alt="Model Area: Corvallis, Oregon (Map Reference)">
+</div>
+      </p>
+        <div class="item">
+    <div class="text">
+       
+
+
+    </div>
+    <figure>
+  <img src="Images/UnrealCar/suburban.png" alt="Description of the image">
+  <figcaption>Normal approach: Import Buildings from OSM data then extruded with roofs and applied texture</figcaption>
+</figure>
+      <figure>
+  <img src="Images/UnrealCar/suburbanrule.png" alt="Description of the image">
+  <figcaption>Our approach: Subdivide lots in Street Shapes and applied Suburban House CGA rule to generate house shapes, driveways aligned with sidewalks</figcaption>
+</figure>
+   
+
+  </div>
+<h4>Modifying exisitng CGA rule files</h4>
+       <div class="item">
+    <div class="text">
+      <h4>Street Modelling </h3>
+      <p>From the street attribute, the street shape's width is calculated from the number of lanes, cycleway lanes, and parking lanes side. Then Complete Street rule package are assigned to the Street to automate the generation of the street. Object attributes can then be used to connect to the variable defined in the rule package. 
+      <p><a href="https://github.com/d-wasserman/Complete_Street_Rule">Complete Street</a>Complete Street Rule Package to generate streets and sidewalks based on number of lanes, street direction, cycleway, and parking attributes.</p>
+      Wasserman, D. Complete Street Rule. (2015) GitHub repository, https://github.com/d-wasserman/Complete_Street_Rule.
+    </div>
+    <img src="Images/UnrealCar/cityeningstreet.png" alt="CityEngine Street Example">
+  </div>
+
+<div class="item">
+    <figure>
+  <img src="Images/UnrealCar/solarpanel.png" alt="Suburban Add-ons">
+  <figcaption>Solar Panel Source:Example_Redlands_Redevelopment__2024_0/3D_City_Design_Rules/Support/Photovoltaic_Roof.cga</figcaption>
+</figure>
+      <figure>
+    <img src="Images/UnrealCar/powerline.png" alt="Suburban Add-ons">
+  <figcaption>Powerlines CGA</figcaption>
+</figure>
+
+        </div>
+          <div class="feature-item">
+
+
+      <h3>2. Procedural Content Generation in Unreal Engine</h3>
+    <h4>a) Importing CityEngine Models</h4>
+    <p>Models are imported into Unreal Engine using the Datasmith plugin, preserving all object attributes as Asset User Data. These attributes are converted into tags used as filters in procedural content generation.</p>
+
+    <h4>b) Creating PCG Graphs by Landscape Type</h4>
+    <p>Separate PCG Graphs are created for each landscape type, such as <code>wood</code>, <code>farmland</code>, <code>grass</code>, <code>meadow</code>, and <code>road</code>.</p>
+
+    <h4>c) PCG Workflow</h4>
+    <p>Each PCG Graph performs the following steps:</p>
+    <ol>
+      <li>Perform a World Ray Hit Query on actors tagged by landscape type (e.g., <code>wood</code>, <code>grass</code>).</li>
+      <li>Sample the hit surface into points based on parameters like looseness, point extents, and point density (e.g., woods have denser points than grass).</li>
+      <li>Project points onto the terrain surface.</li>
+      <li>Apply random offsets, scales, and rotations to each point to add natural variation.</li>
+      <li>Spawn a variety of static meshes at the points according to the environment type.</li>
+    </ol>
+      
+     
+ 
+
+  <div class="item">
+
+    <img src="Images\UnrealCar\wood.png" alt="Suburban Block Layout">
+  </div>
+    </section>
+
+
+  </section>
+
+
+
+        <!-- Future Enhancements -->
+        <section class="future-plans">
+            <h2 class="header-body">Future Enhancements</h2>
+            <p>Suburban House can be enhanced to model more random houses</p>
+            <p>More diverse landscapes of farmland and grassland can be populated with diverse assets</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Vehicle Simulator Project. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -16,7 +16,9 @@ p{
     color: whitesmoke;
     font-size: large;
 }
-
+main{
+    padding:10%;
+}
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -247,16 +249,24 @@ footer {
     justify-content: center;
 
     /* stolen from features-workflow */
-    padding: 20px;
+   padding: 0px;
     background-color: var(--middlegroundPurple);
     border-radius: 12px;
-    margin: 20px 0;
+
+}
+img {
+    max-width: 40%;
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;;
 }
 .item img{
     width: 100%;
     max-width: 500px;
     margin-right: 20px;
     border-radius: 8px;
+    margin: 0 20px;
 }
 .hardware-item img {
     width: 100%;
@@ -332,3 +342,23 @@ footer {
     color: whitesmoke;
     font-size: 1.1rem;
 }
+
+figure {
+  align-items: center;
+  margin: 40px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.95em;
+
+}
+    code {
+      background-color:var(--backGroundPurple);
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+      font-size: 0.95em;
+    }
