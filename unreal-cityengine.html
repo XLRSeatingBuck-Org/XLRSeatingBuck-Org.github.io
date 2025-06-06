@@ -32,7 +32,8 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Procedural Modelling with Unreal Engine and City Engine</h1>
-                <p>Immersive experience in the diverse landscapes of farmlands, woods and suburban areas in Unreal Engine.</p>
+                <p>Immersive experience in the diverse landscapes of farmlands, woods and suburban areas in Unreal Engine. - Tran Tran</p>
+       
                 <a href="https://github.com/XLRSeatingBuck-Org/UE-CityEngine" class="btn" download>Download Here</a>
             </div>
         </section>
@@ -111,9 +112,8 @@ Each house is fronted by a sidewalk running parallel to the street, typically ac
        <div class="item">
     <div class="text">
       <h4>Street Modelling </h3>
-      <p>From the street attribute, the street shape's width is calculated from the number of lanes, cycleway lanes, and parking lanes side. Then Complete Street rule package are assigned to the Street to automate the generation of the street. Object attributes can then be used to connect to the variable defined in the rule package. 
-      <p><a href="https://github.com/d-wasserman/Complete_Street_Rule">Complete Street</a>Complete Street Rule Package to generate streets and sidewalks based on number of lanes, street direction, cycleway, and parking attributes.</p>
-      Wasserman, D. Complete Street Rule. (2015) GitHub repository, https://github.com/d-wasserman/Complete_Street_Rule.
+      <p>From the street attribute, the street shape's width is calculated from the number of lanes, cycleway lanes, and parking lanes side. Then Complete Street rule package are assigned to the Street to generate streets and sidewalks based on number of lands, street direction, cycleway, and parking attributes.</p>
+      <p>Source: Wasserman, D. Complete Street Rule. (2015)<a href ="https://github.com/d-wasserman/Complete_Street_Rule">GitHub repository</a></p>
     </div>
     <img src="Images/UnrealCar/cityeningstreet.png" alt="CityEngine Street Example">
   </div>
@@ -121,7 +121,7 @@ Each house is fronted by a sidewalk running parallel to the street, typically ac
 <div class="item">
     <figure>
   <img src="Images/UnrealCar/solarpanel.png" alt="Suburban Add-ons">
-  <figcaption>Solar Panel Source:Example_Redlands_Redevelopment__2024_0/3D_City_Design_Rules/Support/Photovoltaic_Roof.cga</figcaption>
+  <figcaption>Solar Panel CGA (Source: Example_Redlands_Redevelopment__2024_0)</figcaption>
 </figure>
       <figure>
     <img src="Images/UnrealCar/powerline.png" alt="Suburban Add-ons">
@@ -134,20 +134,40 @@ Each house is fronted by a sidewalk running parallel to the street, typically ac
 
       <h3>2. Procedural Content Generation in Unreal Engine</h3>
     <h4>a) Importing CityEngine Models</h4>
-    <p>Models are imported into Unreal Engine using the Datasmith plugin, preserving all object attributes as Asset User Data. These attributes are converted into tags used as filters in procedural content generation.</p>
+    <p>CityEngine Models are imported into Unreal Engine using the Datasmith plugin. This process retains all object attributes by storing them as Asset User Data. These attributes are then converted into tags, which can be used as filters in the Procedural Content Generation (PCG) workflow</p>
 
-    <h4>b) Creating PCG Graphs by Landscape Type</h4>
-    <p>Separate PCG Graphs are created for each landscape type, such as <code>wood</code>, <code>farmland</code>, <code>grass</code>, <code>meadow</code>, and <code>road</code>.</p>
 
-    <h4>c) PCG Workflow</h4>
-    <p>Each PCG Graph performs the following steps:</p>
-    <ol>
-      <li>Perform a World Ray Hit Query on actors tagged by landscape type (e.g., <code>wood</code>, <code>grass</code>).</li>
-      <li>Sample the hit surface into points based on parameters like looseness, point extents, and point density (e.g., woods have denser points than grass).</li>
-      <li>Project points onto the terrain surface.</li>
-      <li>Apply random offsets, scales, and rotations to each point to add natural variation.</li>
-      <li>Spawn a variety of static meshes at the points according to the environment type.</li>
-    </ol>
+    <h4>b) PCG Workflow</h4>
+    <p>Separate PCG Graphs are created for each landscape type, such as 
+  wood, farmland, grass, meadow, and road. Each PCG Graph performs the following steps:</p>
+  <ol>
+    <li>
+      <strong>World Ray Hit Query</strong><br>
+      Perform a raycast (World Ray Hit) on actors tagged with the appropriate landscape type 
+      (e.g., <code>wood</code>, <code>grass</code>) to find valid placement surfaces.
+    </li>
+    <li>
+      <strong>Point Sampling</strong><br>
+      Generate points on the hit surfaces using parameters such as:
+      <ul>
+        <li><strong>Looseness:</strong> controls spacing irregularity between points</li>
+        <li><strong>Point Extents:</strong> the area each point affects</li>
+        <li><strong>Point Density:</strong> how many points are generated (e.g., higher density for woods)</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Project Points onto Terrain</strong><br>
+      Align generated points to the terrain surface to ensure elevation and slope accuracy.
+    </li>
+    <li>
+      <strong>Apply Random Offsets, Scales, and Rotations</strong><br>
+      Introduce variation to each point to prevent visual repetition and achieve natural distribution.
+    </li>
+    <li>
+      <strong>Spawn Static Meshes</strong><br>
+      Instantiate a diverse set of static meshes (e.g., trees, shrubs, rocks) according to the landscape type.
+    </li>
+  </ol>
       
      
  
@@ -166,8 +186,17 @@ Each house is fronted by a sidewalk running parallel to the street, typically ac
         <!-- Future Enhancements -->
         <section class="future-plans">
             <h2 class="header-body">Future Enhancements</h2>
-            <p>Suburban House can be enhanced to model more random houses</p>
-            <p>More diverse landscapes of farmland and grassland can be populated with diverse assets</p>
+               <h3>Dynamic PCG Workflow</h3>
+    <p>- Streamlined PCG Attachment: The PCG attachment and tagging process can be streamlined to be more robust and automated, such as by including only useful tag filters or attaching PCG components automatically.</p>
+    <p>- Diverse Landscape: Each landscape can be populated with a wider range of vegetation, crops, and ground features.</p>
+    <p>- PCG connection to the environment: Road realism can be enhanced with grass on the side; and each landscape area can be designed to blend smoothly into the next or into the road 
+            <h3>Suburban house Rule Package</h3>
+    <p>
+     - Corner Lot Handling: The current CGA rule for suburban houses does not support lots located at street corners, where there are multiple street-facing edges. At a corner lot, houses typically have sidewalks wrapping around the corner and are set farther back from the street, often with added fences or plantings.
+    </p>
+    <p> - Expanded House Shapes: Additional house shapes with diverse door generation and placement can be modeled to avoid repetiton and improve realism.</p>
+            <h4>Powerline Rule Package</h4>
+            <p>Continuous powerline generation at CROSSING/JOINT: At these nodes, the rule should switch to using an intersection pole. For diagonal nodes, the orientation of the pole and the stretching of the wires should be dynamically encoded to close any gaps between the wire and the pole.</p>
         </section>
 
     </main>

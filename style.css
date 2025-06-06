@@ -263,10 +263,16 @@ img {
 }
 .item img{
     width: 100%;
-    max-width: 500px;
+
     margin-right: 20px;
     border-radius: 8px;
     margin: 0 20px;
+}
+figure img{
+    max-width: 80%
+}
+figure {
+    padding:2px
 }
 .hardware-item img {
     width: 100%;
